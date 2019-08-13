@@ -7,7 +7,13 @@ class CashRegister
     @total = 0 
     @discount = discount
   
-  end def add_item(title, price, quantity = 1)
+  end 
+  
+  def items 
+    @items
+  end
+  
+  def add_item(title, price, quantity = 1)
     self.total += price * quantity
     quantity.times do 
       @items << title
@@ -24,9 +30,7 @@ class CashRegister
     end
   end
   
-  def items 
-    @items
-  end
+  
   
   def void_last_transaction
     @items.pop
